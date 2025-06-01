@@ -45,11 +45,11 @@ const RegisterPage = () => {
     try {
       console.log(
         "▶️ Sending request to:",
-        `${api.defaults.baseURL}/api/auth/register`
+        `${api.defaults.baseURL}/auth/register`
       );
       console.log("📦 Payload:", { name, email, password });
 
-      const res = await api.post("/api/auth/register", {
+      const res = await api.post("/auth/register", {
         name,
         email,
         password,

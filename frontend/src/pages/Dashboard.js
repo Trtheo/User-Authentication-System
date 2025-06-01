@@ -19,6 +19,7 @@ const Dashboard = () => {
       setLoading(true);
       const res = await API.get("/api/tasks");
       setTasks(res.data);
+      console.log("Fetched tasks from backend:", res.data.data); // For frontend console debugging
     } catch (err) {
       // The API interceptor now handles 401 token expiration,
       // so this specific toast might be redundant or for other types of errors.
