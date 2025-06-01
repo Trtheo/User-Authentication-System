@@ -120,6 +120,8 @@ npm start
 - App runs at: `http://localhost:3000` in browser
 
 
+
+
 ###  Authentication Features
 User Registration & Login
 
@@ -193,6 +195,9 @@ CREATE TABLE tasks (
 
 ```
 
+**DATABASE HOST LINK**  https://user-authentication-system-1-p9ro.onrender.com
+
+**GETTING ALL USERS** https://user-authentication-system-1-p9ro.onrender.com/api/auth/users
 
 ### 👨‍💻 Author
 **Theophile Niyigaba**
