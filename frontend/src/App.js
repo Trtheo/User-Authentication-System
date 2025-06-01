@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import NotFoundPage from './pages/NotFoundPage'; // ✅ Import 404 page
+import Dashboard from './pages/Dashboard';
 
 // Private route wrapper
 const PrivateRoute = ({ children }) => {
@@ -32,7 +33,7 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage />
+              <Dashboard/>
             </PrivateRoute>
           }
         />

@@ -6,11 +6,10 @@ const db = require("./db");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+app.use(express.json()); // This middleware is vital!
 
 // === CORS Configuration ===
-const allowedOrigins = [process.env.REACT_APP_BACKEND_URL,
-    'http://localhost:3000'
-];
+const allowedOrigins = ["http://localhost:3000"];
 
 app.use(
   cors({
