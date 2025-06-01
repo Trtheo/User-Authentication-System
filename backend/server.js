@@ -8,10 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // === CORS Configuration ===
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://your-frontend.vercel.app", //  Replace with your real frontend domain
-];
+const allowedOrigins = [process.env.REACT_APP_BACKEND_URL];
 
 app.use(
   cors({
@@ -20,7 +17,7 @@ app.use(
         return callback(null, true);
       }
       return callback(
-        new Error(` CORS policy blocked this origin: ${origin}`)
+        new Error(`❌ CORS policy blocked this origin: ${origin}`)
       );
     },
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -38,7 +35,7 @@ app.use("/api/password", require("./routes/password"));
 
 // === Health Check ===
 app.get("/", (req, res) => {
-  res.send(" API is running...");
+  res.send("✅ API is running...");
 });
 
 // === Global Error Handler ===
@@ -51,7 +48,7 @@ app.use((err, req, res, next) => {
 db.on("open", () => {
   app.listen(PORT, () => {
     console.log(
-      ` Server running at http://localhost:${PORT} [${
+      `🚀 Server running at http://localhost:${PORT} [${
         process.env.NODE_ENV || "development"
       } mode]`
     );
